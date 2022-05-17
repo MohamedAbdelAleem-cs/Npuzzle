@@ -247,8 +247,6 @@ namespace Npuzzle
             //Console.WriteLine("Manhattan: " + manhatten);
             if (manhatten == 0)
             {
-                Console.WriteLine("Stop");
-                Console.WriteLine(x.level);
                 foundsol = true;
                 sol = x.level;
                 node f = x.par;
@@ -264,11 +262,11 @@ namespace Npuzzle
                         f = f.par;
                     }
                     flist.Reverse();
-                    int counter = 1;
+                    int counter = 0;
                     foreach (node z in flist)
                     {
                         Console.WriteLine("-------------------------------");
-                        Console.WriteLine(counter);
+                        Console.WriteLine("#" + counter);
                         counter++;
                         printmatrix(z);
                     }
@@ -285,7 +283,11 @@ namespace Npuzzle
             {
                 for (int j = 0; j < x.size; j++)
                 {
-                    if (i == x.size - 1 && j == x.size - 1 && x.arr[i,j]!=0)
+                    if (x.arr[i, j] == 0)
+                    {
+                        continue;
+                    }
+                    else if (i == x.size - 1 && j == x.size - 1 && x.arr[i,j]!=0)
                     {
                         hamming++;
                         continue;
@@ -297,13 +299,32 @@ namespace Npuzzle
                     
                 }
             }
-            if (hamming == 1)
+            if (hamming == 0)
             {
                 foundsol = true;
                 sol = x.level;
-                Console.WriteLine("Stop");
-                Console.WriteLine(x.level);
-                printmatrix(x);
+                node f = x.par;
+                if (x.size == 3)
+                {
+                    List<node> flist = new List<node>();
+                    Console.WriteLine("Steps");
+                    flist.Add(x);
+                    while (f != null)
+                    {
+
+                        flist.Add(f);
+                        f = f.par;
+                    }
+                    flist.Reverse();
+                    int counter = 0;
+                    foreach (node z in flist)
+                    {
+                        Console.WriteLine("-------------------------------");
+                        Console.WriteLine("#"+counter);
+                        counter++;
+                        printmatrix(z);
+                    }
+                }
             }
 
             return hamming+x.level;

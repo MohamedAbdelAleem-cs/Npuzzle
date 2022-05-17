@@ -84,21 +84,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="15 Puzzle - 1.txt" />
-    <Content Include="15 Puzzle 1.txt" />
-    <Content Include="15 Puzzle 3.txt" />
-    <Content Include="15 Puzzle 4.txt" />
-    <Content Include="15 Puzzle 5.txt" />
-    <Content Include="24 Puzzle 1.txt" />
-    <Content Include="24 Puzzle 2.txt" />
-    <Content Include="50 Puzzle.txt" />
-    <Content Include="8 Puzzle %281%29.txt" />
-    <Content Include="8 Puzzle %282%29.txt" />
-    <Content Include="8 Puzzle %283%29.txt" />
-    <Content Include="8 Puzzle %284%29.txt" />
-    <Content Include="99 Puzzle - 1.txt" />
-    <Content Include="99 Puzzle - 2.txt" />
-    <Content Include="9999 Puzzle.txt" />
     <Content Include="TEST.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

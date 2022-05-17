@@ -283,7 +283,11 @@ namespace Npuzzle
             {
                 for (int j = 0; j < x.size; j++)
                 {
-                    if (i == x.size - 1 && j == x.size - 1 && x.arr[i,j]!=0)
+                    if (x.arr[i, j] == 0)
+                    {
+                        continue;
+                    }
+                    else if (i == x.size - 1 && j == x.size - 1 && x.arr[i,j]!=0)
                     {
                         hamming++;
                         continue;
@@ -296,7 +300,7 @@ namespace Npuzzle
                     
                 }
             }
-            if (hamming == 1)
+            if (hamming == 0)
             {
                 foundsol = true;
                 sol = x.level;

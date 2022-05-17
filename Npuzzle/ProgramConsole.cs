@@ -12,7 +12,7 @@ namespace Npuzzle
         static void Main(string[] args)
         {
             Console.WriteLine("Manhattan only");
-            bool succeed = ReadAndCheck("Solvable Cases/TEST.txt", 0);
+            bool succeed = ReadAndCheck("Solvable Cases/8 Puzzle (1).txt", 2);
             //bool succeed = ReadAndCheck("Unsolvable Cases/9999 Puzzle - Unsolvable Case 3.txt", 0);
             GC.Collect();
             GC.WaitForPendingFinalizers();
